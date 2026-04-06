@@ -5,40 +5,35 @@ public class main { // שם המחלקה
 
     public static void main(String[] args) { // מתודת הכניסה
         Scanner scanner = new Scanner(System.in);
-
         int n = scanner.nextInt();
         if (n <= 1) { // check if N is negative
             System.out.println(n + "not valid number");
         }
-        for (int i = 1; i <= n; i++) {
+        for (int i = 2; i <= n; i++) {
             if (isPrime(i)) {
-                System.out.println(i + "is a prime number");
+                System.out.println(i + " "+ "is a prime number");
+            }
+            else{
+                factors(i);
             }
         }
     }
 
-//////////////// Priate Functions ////////////////
-    public static void factors(String[] args) {
-        // קבלת מספר מתוך ארגומנטים של שורת הפקודה
-        if (args.length == 0) {
-            return;
-        }
-
-        long n = Long.parseLong(Arrays.toString(args));
-        System.out.print("הפירוק לגורמים ראשוניים של " + n + " הוא: ");
-
+    //////////////// Priate Functions ////////////////
+    public static void factors(int i) {
+        System.out.print(i + " = "); // print the structure as required
         // עבור כל גורם פוטנציאלי i, עד לשורש של n
-        for (long i = 2; i * i <= n; i++) {
-
+        // שונה ל-int במקום long להתאמה לסוג הקלט
+        for (int k = 2; k * k <= i; k++) { //
             // אם i הוא גורם של n, יש לחלק אותו שוב ושוב עד שאינו גורם יותר
-            while (n % i == 0) {
-                System.out.print(i + " ");
-                n = n / i;
+            while (i % k == 0) {
+                System.out.print(k + " * "); // הוספת כוכבית כנדרש במטלה 1
+                i = i / k;
             }
         }
         // אם נותר גורם הגדול מהשורש של n המקורי, הוא בהכרח ראשוני
-        if (n > 1) {
-            System.out.println(n);
+        if (i > 1) {
+            System.out.println(i);
         } else {
             System.out.println();
         }
