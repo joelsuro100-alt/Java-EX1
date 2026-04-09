@@ -4,7 +4,7 @@ import java.util.Scanner;
  * This class completes Assignment 1 for Intro to CS (Ariel University).
  * The logic follows the style of explaining steps via numbered lists.
  */
-public class Main {
+public class main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
@@ -29,6 +29,7 @@ public class Main {
                 factors(i); // Call helper function for composite numbers
             }
         }
+        //qustion 4
     }
 
     /* ########## Question 1: Prime & Factors ########## */
@@ -41,8 +42,8 @@ public class Main {
      * 5) use loop of 6k +/- 1 to check for other prime factors until root.
      */
     public static boolean isPrime(int i) {
-        if (i == 2 || i == 3 || i == 5 || i == 7) return true; // Known small primes
         if (i < 2) return false;
+        if (i == 2 || i == 3 || i == 5 || i == 7) return true; // Known small primes
         if (i % 2 == 0 || i % 3 == 0 || i % 5 == 0 || i % 7 == 0) return false;
 
         long root = (long) Math.sqrt(i) + 1;
@@ -108,7 +109,7 @@ public class Main {
      */
     public static int findMax(int[] arr) {
         if (arr == null || arr.length == 0) return Integer.MIN_VALUE; // Return special value for empty
-        int max = arr;
+        int max = arr[0];
         for (int i = 1; i < arr.length; i++) {
             if (arr[i] > max) {
                 max = arr[i]; // update max value
