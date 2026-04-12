@@ -8,19 +8,15 @@ public class main {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        // 1) Get input N from user
-        System.out.print("Enter a positive integer n: ");
+        // --- Question 1 ---
+        System.out.print("Enter a positive integer n: "); // 1) Get input N from user
         int n = scanner.nextInt();
-
-        // 2) Basic validation for positive input
-        if (n < 1) {
+        if (n < 1) { // 2) Basic validation for positive input
             System.err.println("Error: " + n + " is not a valid positive number.");
             System.exit(-1);
         }
 
-        // 3) Loop from 1 to n to print prime/factors as per Q1 requirements
-        for (int i = 1; i <= n; i++) {
+        for (int i = 1; i <= n; i++) {  // 3) Loop from 1 to n to print prime/factors as per Q1 requirements
             if (i == 1) {
                 System.out.println("1 = 1"); // 1 is not prime and has no prime factors
             } else if (isPrime(i)) {
@@ -32,7 +28,10 @@ public class main {
         //qustion 4
     }
 
-    /* ########## Question 1: Prime & Factors ########## */
+
+
+
+    /* ########## helper functions ########## */
 
     /**
      * 1) check if i is a prime number.
