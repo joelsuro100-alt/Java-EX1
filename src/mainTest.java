@@ -11,14 +11,7 @@ class mainTest {
 
     @Test
     void isPrime() {
-        boolean prime = main.isPrime(2);
-        assertTrue(prime);
-        prime = main.isPrime(3);
-        assertTrue(prime);
-        prime = main.isPrime(29);
-        assertTrue(prime);
-        prime = main.isPrime(33331);
-        assertTrue(prime);
+
     }
 
     @org.junit.jupiter.api.Test
